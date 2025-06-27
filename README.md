@@ -4,7 +4,9 @@ This repository contains a simple Python Flask App running with the Google AI Ge
 
 <img width="1271" alt="Screenshot 2024-05-07 at 7 42 28 AM" src="https://github.com/logankilpatrick/gemini-api-quickstart/assets/35577566/156ae3e0-cffa-47a3-8a71-1bded78c4632">
 
-## Basic request
+## Quick Start
+
+### Basic Example
 
 To send your first API request with the [Google Gen AI SDK](https://ai.google.dev/gemini-api/docs/libraries#python), make sure you have the right dependencies installed (see installation steps below) and then run the following code:
 
@@ -25,50 +27,56 @@ for message in chat.get_history():
     print(message.parts[0].text)
 ```
 
-## Setup
+## Installation and Setup
 
-1. If you don’t have Python installed, install it [from Python.org](https://www.python.org/downloads/).
+### 1. Install UV Package Manager
 
-2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository.
+[UV](https://docs.astral.sh/uv/) is a fast Python package manager and virtual environment tool. Choose one of the following installation methods:
 
-3. Create a new virtual environment:
-
-   - macOS:
-     ```bash
-     $ python -m venv venv
-     $ . venv/bin/activate
-     ```
-
-   - Windows:
-     ```cmd
-     > python -m venv venv
-     > .\venv\Scripts\activate
-     ```
-
-   - Linux:
-      ```bash
-      $ python -m venv venv
-      $ source venv/bin/activate
-      ```
-
-4. Install the requirements:
-
-   ```bash
-   $ pip install -r requirements.txt
-   ```
-
-5. Make a copy of the example environment variables file:
-
-   ```bash
-   $ cp .env.example .env
-   ```
-
-6. Add your [API key](https://ai.google.dev/gemini-api/docs/api-key) to the newly created `.env` file or as an environment variable.
-
-7. Run the app:
-
+#### macOS/Linux
 ```bash
-$ flask run
+curl -Ls https://astral.sh/uv/install.sh | sh
 ```
 
-You should now be able to access the app from your browser at the following URL: [http://localhost:5000](http://localhost:5000)!
+#### Alternative Installation Methods
+- Using pipx:
+  ```bash
+  pipx install uv
+  ```
+
+#### Windows
+- Using Scoop:
+  ```powershell
+  scoop install uv
+  ```
+- Using PowerShell:
+  ```powershell
+  iwr https://astral.sh/uv/install.ps1 -useb | iex
+  ```
+- Using winget:
+  ```cmd
+  winget install --id=astral-sh.uv  -e
+  ```
+
+### 2. Project Setup
+
+1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository
+
+
+
+### 3. Configuration
+
+1. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Add your [API key](https://ai.google.dev/gemini-api/docs/api-key) to the `.env` file
+
+### 4. Run the Application
+
+```bash
+uv run -- flask run
+```
+
+The application will be available at [http://localhost:5000](http://localhost:5000)
