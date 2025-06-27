@@ -3,7 +3,7 @@ name = "gemini-api-quickstart"
 version = "0.1.0"
 description = "Gemmini API Quickstart for Python"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "annotated-types==0.6.0",
     "blinker==1.8.2",
